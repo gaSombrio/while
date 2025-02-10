@@ -6,11 +6,22 @@
     */
 
     //ENTRADA
-
+    let senha = Number(prompt(`crie sua senha`));
 
     //PROCESSAMENTO
+    while(isNaN(senha) || senha < 1000 || senha > 9999) {
+        alert(`senha inválida, digite novamente`)
+        senha = Number(prompt(`crie uma nova senha`));
+    }
 
+    let senhaCorreta = Number(prompt(`digite sua senha pra acessar`))
 
+    while (senhaCorreta !== senha) {
+        alert(`senha incorreta digite novamente`)
+        senhaCorreta = Number(prompt(`digite sua senha`))
+    }
+
+    alert(`senha correta`)
     //SAÍDA
 
 </script>

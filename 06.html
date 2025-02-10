@@ -20,11 +20,48 @@
     */
 
     //ENTRADA
-
+    let votosJoaozinho = 0;
+    let votosMariazinha = 0;
+    let votosNulo = 0;
+    let votosBranco = 0;
+    let totalVotos = 0;
+    let contador;
+    let vencedor;
 
     //PROCESSAMENTO
+    do {
+        contador = Number(prompt(`Escolha uma dessas opçoes:\n 1. Candidato Joãozinho\n 2. Candidato Mariazinha\n 3. Nulo\n 4. Branco.\n digite 0 para encerrar`));
+        if (contador == 1) {
+            votosJoaozinho++
+            totalVotos++
+        } else if (contador == 2) {
+            votosMariazinha++
+            totalVotos++
+        } else if (contador == 3) {
+            votosNulo++
+            totalVotos++
+        } else if (contador == 4) {
+            votosBranco++
+            totalVotos++
+        } else if (contador !== 0) {
+            alert(`coloque valores corretos`)
+        }
+    } while (contador !== 0);
+
+    let porcentagemNulo = (votosNulo * 100) / totalVotos ;
+    let porcentagemBranco = (votosBranco * 100) / totalVotos ;
+    
+    if (votosJoaozinho > votosMariazinha) {
+        vencedor = "Joaozinho";
+    } else if (votosMariazinha > votosJoaozinho){
+        vencedor = "Mariazinha";
+    } else {
+        vencedor = "empate";
+    }
 
 
     //SAÍDA
 
-</script>
+    document.write(`Joãozinho teve ${votosJoaozinho} votos, Mariazinha teve o total de ${votosMariazinha}.<br> A porcentagem de votos nulos foi de ${porcentagemNulo.toFixed(2)}%<br> A porcentagem de votos brancos foi de ${porcentagemBranco.toFixed(2)}%<br> O candidato vencedor foi ${vencedor} `)
+
+</script> 
